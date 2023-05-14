@@ -1,38 +1,239 @@
-.App {
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  text-transform: capitalize;
+  transition: all 0.3s;
+}
+:root{
+  --white: #fff;
+  --p: #c4c4c4;
+  --orange: #fd7e14;
+  --bg-count: #0a0a0a;
+  --bg-full: #151515;
+  --boreder-top: 4px solid rgb(70,70,70);
+}
+.navbar{
+  position: absolute;
+  width: 100%;
+  top: 0;
+  z-index: 2;
+  background: none;
+}
+.navbar .nav-link,
+.navbar .shaer i{
+  color: var(--white);
+}
+.navbar .nav-link:hover,
+.navbar .shaer i:hover,
+.navbar .nav-link.active{
+  color: var(--orange);
+}
+
+#Home img{
+  object-fit: cover;
+  min-height: 95vh;
+}
+#Home .content{
+  position:absolute;
+  top: 50%;
+  left: 50%;
+  transform:translate(-10%,-50%);
+}
+#Home .content .shape{
+  letter-spacing: 6px;
+  font-size: 18px;
+  text-transform: uppercase;
+}
+
+#Home .content .orange{
+  color:var(--orange);
+}
+.btn-home{
+  display: inline-block;
+  border: none;
+  background: var(--orange);
+  color: var(--white);
+  font-size: 15px;
+  padding: 10px 22px;
+  text-transform: uppercase;
+}
+section{
+  padding: 6rem 6%;
+}
+#about{
+  background: var(--bg-count);
+}
+.headng h4{
+  color: var(--orange);
+}
+#about .content i{
+  height: 90px;
+  width: 90px;
+  font-size: 27px;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  display: inline-block; 
+  color: var(--orange);
+  line-height: 90px;
   text-align: center;
+  transition: all 0.3s;
+  margin: 12px;
 }
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+#about .content:hover i{
+  background: var(--orange);
+  color: var(--white);
 }
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+#classes{
+  background:var(--bg-full);
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+#classes .card-body{
+  border-top: var(--boreder-top);
+}
+#classes h6{
+  color:var(--orange);
+} 
+.register{
+  background-color: #0a0a0a;
+  background-size: cover;
+  background-position:center;
+  background-repeat: repeat;
+  height: 50vh;
   display: flex;
-  flex-direction: column;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  text-align: center;
+}
+.btn-reg{
+  display: inline-block;
+  border: 1px solid var(--orange);
+  background: none;
+  color: var(--white);
+  font-size: 15px;
+  padding: 10px 22px;
+  text-transform: uppercase;
+}
+.btn-reg:hover{
+  background: var(--orange);
+}
+#plan{
+  background:var(--bg-full);
+}
+.plan .card{
+  background: none;
+}
+.plan h3{
+color: var(--white)   ;
+}
+.plan h1{
+  color:var(--orange);
+  font-size: 45px;
+  text-transform: uppercase;
 }
 
-.App-link {
-  color: #61dafb;
+.plan p{
+  color:var(--p);
+  font-size: 13px;
+  text-transform: uppercase;
+  padding: 5px;
+  line-height: 2.5;
+}
+.plan .card:hover{
+  background:var(--white);
+  color: var(--bg-count);
+}
+.plan .card:hover h3,
+.plan .card:hover p{
+  
+  color: var(--bg-count);
+}
+#gallery{
+  background:var(--bg-full);
+}
+.gallery-item .icon{
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  opacity: 0;
+}
+.gallery-item:hover .icon{
+  opacity: 1;
+  top: 50%;
+}
+.image-zoom{
+  position: relative;
+  overflow: hidden;
+}
+.image-warpper{
+  overflow: hidden;
+  position: relative;
+}
+.image-zoom:hover .image-warpper img{
+  transform: scale(1.1);
+}
+.ourteam img{
+  position: relative;
+  width: 100%;
+  object-fit: cover;
+  overflow: hidden;
+}
+.ourteam .card-body{
+  position: absolute;
+  bottom: -60px;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  background: var(--bg-count);
+  width: 100%;
+  opacity: 0;
+}
+.ourteam .card:hover .card-body{
+  opacity: 1;
+  bottom: -40px;
+  
+} 
+.ourteam .card-body h2{
+  color: var(--orange);
+  font-size: 20px;
+}
+.contact{
+  background-color: var(--bg-full)
+}
+.contact input,
+.contact textarea{
+  background: none;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/* media query */
+@media(max-width:970px){
+  html{
+      font-size: 55%;
   }
-  to {
-    transform: rotate(360deg);
-  }
+  .navbar .shaer i{
+      display:none;
+
+  } 
 }
